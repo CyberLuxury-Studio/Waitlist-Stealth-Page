@@ -1,0 +1,15 @@
+
+> cyber-stealth-template@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.4
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1923ms
+ ○ Compiling / ...
+ ✓ Compiled / in 9.6s (1419 modules)
+ HEAD / 200 in 10050ms
+ ✓ Compiled in 718ms (688 modules)
+ GET / 200 in 131ms
+ ✓ Compiled in 1349ms (1401 modules)
