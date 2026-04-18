@@ -1,28 +1,17 @@
 import React from 'react';
-import { Terminal, Server } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0e0e10] dark:bg-[#0e0e10] full-width bottom-0 border-t-4 border-[#00f3ff]/10 w-full py-12 px-6 flex flex-col md:flex-row justify-between items-start gap-8 max-w-[1440px] mx-auto mt-auto">
-      <div className="flex flex-col gap-4">
-        <div className="text-lg font-bold text-[#00f3ff] font-headline uppercase">
-          TERMINAL_CONSTRUCT
-        </div>
-        <div className="font-body text-label-md tracking-[0.1em] uppercase text-[#b9cacb] text-xs">
-          © {new Date().getFullYear()} TERMINAL_CONSTRUCT. ALL_RIGHTS_RESERVED. [v.2.0.4]
-        </div>
+    <footer className="bg-[#0e0e0e] w-full border-t border-[#3a494b]/10 flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-12 mx-auto relative z-10">
+      <div className="text-[#00f3ff] font-headline font-black mb-6 md:mb-0">STEALTH_BETA</div>
+      <div className="flex flex-wrap gap-4 md:gap-8 justify-center font-body text-[10px] tracking-[0.2em] uppercase text-[#b9cacb]/50">
+        <a className="hover:text-[#ff003c] transition-colors duration-500 hover:tracking-widest" href="#">PRIVACY_PROTOCOL</a>
+        <a className="hover:text-[#ff003c] transition-colors duration-500 hover:tracking-widest" href="#">TERMS_OF_SERVICE</a>
+        <a className="hover:text-[#ff003c] transition-colors duration-500 hover:tracking-widest" href="#">SYSTEM_STATUS</a>
+        <a className="hover:text-[#ff003c] transition-colors duration-500 hover:tracking-widest" href="#">ENCRYPTION_DOCS</a>
       </div>
-      <div className="flex flex-col sm:flex-row gap-8">
-        <nav className="flex flex-col gap-2">
-          <a className="font-body text-label-md tracking-[0.1em] uppercase text-[#b9cacb] hover:text-[#bd00ff] hover:translate-x-1 transition-all text-xs" href="#">SECURITY_POLICY</a>
-          <a className="font-body text-label-md tracking-[0.1em] uppercase text-[#b9cacb] hover:text-[#bd00ff] hover:translate-x-1 transition-all text-xs" href="#">ENCRYPTION_STANDARDS</a>
-          <a className="font-body text-label-md tracking-[0.1em] uppercase text-[#b9cacb] hover:text-[#bd00ff] hover:translate-x-1 transition-all text-xs" href="#">TERMS_OF_SERVICE</a>
-          <a className="font-body text-label-md tracking-[0.1em] uppercase text-[#b9cacb] hover:text-[#bd00ff] hover:translate-x-1 transition-all text-xs" href="#">DATA_PURGE</a>
-        </nav>
-        <div className="flex gap-4">
-          <Terminal className="text-[#b9cacb] hover:text-[#00f3ff] cursor-pointer transition-colors w-6 h-6" />
-          <Server className="text-[#b9cacb] hover:text-[#00f3ff] cursor-pointer transition-colors w-6 h-6" />
-        </div>
+      <div className="font-body text-[10px] tracking-[0.2em] uppercase text-[#b9cacb]/50 mt-6 md:mt-0">
+        © {new Date().getFullYear()} BINARY VOGUE SYSTEMS. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

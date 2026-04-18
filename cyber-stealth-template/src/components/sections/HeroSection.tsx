@@ -2,54 +2,36 @@
 
 import React from 'react';
 import { WaitlistInput } from '../ui/WaitlistInput';
-import { Shield, ShieldAlert, Box } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { fadeUpVariant } from '@/lib/motion';
-
-const SplineScene = dynamic(() => import('../spline/HeroSplineScene').then(mod => mod.HeroSplineScene), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-surface-container-lowest animate-pulse">
-        <span className="font-headline text-on-surface-variant tracking-widest text-sm">INITIALIZING_3D_CONTEXT...</span>
-    </div>
-  ),
-});
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
-    <section className="min-h-[921px] flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto px-6 py-20 relative overflow-hidden">
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary-container/5 blur-[100px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-tertiary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+    <section className="min-h-screen pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative">
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#00f3ff]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <motion.div
         initial="hidden"
         animate="visible"
         variants={fadeUpVariant}
-        className="w-full lg:w-1/2 flex flex-col justify-center relative z-10"
+        className="flex-1 space-y-8 z-10 w-full"
       >
-        <div className="inline-block border border-outline-variant/30 bg-surface-container-lowest px-4 py-1 mb-8 w-max">
-          <span className="font-body text-xs text-on-surface-variant uppercase tracking-[0.2em]">System Status: Online</span>
-        </div>
-
-        <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-[0.9] text-surface-tint mb-6">
-          ENTER<br/>THE NEXT<br/>ERA
+        <h1 className="font-headline font-black text-5xl md:text-[4rem] leading-[0.9] tracking-[-0.05em] text-on-surface uppercase">
+          ENTER THE<br/>
+          <span className="text-[#00f3ff] glow-text">NEXT ERA</span>
         </h1>
-
-        <p className="font-body text-lg md:text-xl text-on-surface-variant mb-12 max-w-md border-l-2 border-primary-container pl-4">
-          Join the stealth beta. Limited access. Secure your node in the construct.
+        <p className="text-on-surface-variant text-lg font-body max-w-md">
+          Join the stealth beta. Advanced neural architecture designed for the digital elite.
         </p>
 
-        <div className="max-w-lg w-full">
+        <div className="max-w-lg mt-8">
             <WaitlistInput />
         </div>
 
-        <div className="mt-16 flex items-center gap-6 opacity-60">
-          <div className="text-xs font-body text-on-surface-variant uppercase tracking-widest">Encrypted via</div>
-          <div className="flex gap-4">
-            <Shield className="text-primary-container w-5 h-5" />
-            <ShieldAlert className="text-primary-container w-5 h-5" />
-          </div>
+        <div className="flex flex-wrap gap-4 mt-8">
+          <div className="bg-[#353534] px-2 py-1 rounded-sm text-[#00f3ff] font-label text-xs uppercase tracking-widest">SECURE_CHANNEL</div>
+          <div className="bg-[#353534] px-2 py-1 rounded-sm text-[#00f3ff] font-label text-xs uppercase tracking-widest">INVITE_ONLY</div>
         </div>
       </motion.div>
 
@@ -57,23 +39,19 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="w-full lg:w-1/2 flex items-center justify-center mt-12 lg:mt-0 relative z-10 min-h-[400px]"
+        className="flex-1 w-full h-[400px] md:h-[600px] relative"
       >
-        <div className="w-full h-full min-h-[500px] border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-center relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-2 h-2 bg-primary-container z-20"></div>
-          <div className="absolute bottom-0 left-0 w-2 h-2 bg-secondary z-20"></div>
-
-          <div className="absolute inset-0 bg-gradient-to-tr from-surface via-transparent to-primary-container/10 z-10 pointer-events-none"></div>
-
-          <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen">
-             <SplineScene />
-          </div>
-
-          <div className="text-center relative z-10 p-8 border border-outline-variant/30 backdrop-blur-md bg-surface/50 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-             <Box className="w-10 h-10 text-primary-container mb-4 mx-auto" />
-             <span className="font-headline uppercase tracking-widest text-sm text-on-surface-variant block mb-2">RENDER_VIEWPORT</span>
-             <span className="font-body text-xs text-outline block">Interactive Node Active</span>
-          </div>
+        {/* Placeholder for 3D Spline Scene */}
+        <div className="absolute inset-0 bg-[#131313] rounded-lg ghost-border overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#00f3ff]/10 via-[#050505] to-[#050505] z-10 pointer-events-none"></div>
+          <Image
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+            alt="Abstract 3D rendering of floating geometric shapes in dark space"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+            className="object-cover opacity-60 mix-blend-screen mix-blend-luminosity grayscale z-0"
+          />
         </div>
       </motion.div>
     </section>
