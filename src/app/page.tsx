@@ -1,3 +1,4 @@
+import { SecurityVerificationSection } from '@/components/sections/SecurityVerificationSection';
 import { Header } from '@/components/sections/Header';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Header />
       <HeroSection />
+      <SecurityVerificationSection />
       <FeaturesSection />
       <PricingSection />
       <CtaSection />
